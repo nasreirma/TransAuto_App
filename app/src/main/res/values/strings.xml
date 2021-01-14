@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Robot ARM Control</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="scan">Scan</string>
+    <string name="todo">TODO</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="connected">Connected</string>
+    <string name="waist">Waist</string>
+    <string name="shoulder">Shoulder</string>
+    <string name="elbow">Elbow</string>
+    <string name="wrist_roll">Wrist Roll</string>
+    <string name="wrist_pitch">Wrist Pitch</string>
+    <string name="grip">Grip</string>
+    <string name="_45">45</string>
+    <string name="_20">20</string>
+    <string name="_100">100</string>
+    <string name="_0">0</string>
+    <string name="_180">180</string>
+    <string name="_125">125</string>
+    <string name="_170">170</string>
+</resources>

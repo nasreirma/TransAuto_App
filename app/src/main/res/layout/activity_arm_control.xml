@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textAlignment="center"
+    tools:context=".ArmControlActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="141dp"
+        android:layout_height="126dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginBottom="687dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/transautologo" />
+
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="409dp"
+        android:layout_height="575dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="163dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/robot_arm_v2" />
+
+        <TextView
+            android:id="@+id/Waist"
+            android:layout_width="245dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="440dp"
+            android:text="@string/waist"
+            android:textAlignment="center"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/Shoulder"
+            android:layout_width="245dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="380dp"
+            android:text="@string/shoulder"
+            android:textAlignment="center"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/Elbow"
+            android:layout_width="244dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="225dp"
+            android:text="@string/elbow"
+            android:textAlignment="center"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/Wrist_Roll"
+            android:layout_width="243dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="170dp"
+            android:text="@string/wrist_roll"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/Wrist_Pitch"
+            android:layout_width="244dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="115dp"
+            android:text="@string/wrist_pitch"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/Grip"
+            android:layout_width="243dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="60dp"
+            android:text="@string/grip"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="83dp"
+            android:layout_marginEnd="0dp"
+            android:text="@string/_45"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="138dp"
+            android:layout_marginEnd="0dp"
+            android:text="@string/_0"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="193dp"
+            android:layout_marginEnd="0dp"
+            android:text="@string/_0"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginEnd="0dp"
+            android:text="@string/_20"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="403dp"
+            android:layout_marginEnd="0dp"
+            android:text="@string/_100"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="37dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="463dp"
+            android:layout_marginEnd="0dp"
+            android:text="@string/_0"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="370dp"
+            android:layout_marginTop="83dp"
+            android:layout_marginEnd="0dp"
+            android:text="@string/_125"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="370dp"
+            android:layout_marginTop="138dp"
+            android:layout_marginEnd="0dp"
+            android:text="@string/_180"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="370dp"
+            android:layout_marginTop="193dp"
+            android:layout_marginEnd="0dp"
+            android:text="@string/_180"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="370dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginEnd="0dp"
+            android:text="@string/_180"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="370dp"
+            android:layout_marginTop="403dp"
+            android:layout_marginEnd="0dp"
+            android:text="@string/_170"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="37dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="370dp"
+            android:layout_marginTop="463dp"
+            android:layout_marginEnd="0dp"
+            android:text="@string/_180"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+
+        <SeekBar
+            android:id="@+id/Grip_Slider"
+            android:layout_width="151dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="211dp"
+            android:layout_marginTop="83dp"
+            android:min="45"
+            android:max="125" />
+
+        <SeekBar
+            android:id="@+id/Wrist_Pitch_Slider"
+            android:layout_width="151dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="211dp"
+            android:layout_marginTop="138dp"
+            android:min="0"
+            android:max="180" />
+
+        <SeekBar
+            android:id="@+id/Wrist_Roll_Slider"
+            android:layout_width="151dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="211dp"
+            android:layout_marginTop="193dp"
+            android:min="0"
+            android:max="180" />
+
+        <SeekBar
+            android:id="@+id/Elbow_Slider"
+            android:layout_width="151dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="211dp"
+            android:layout_marginTop="250dp"
+            android:min="20"
+            android:max="180" />
+
+        <SeekBar
+            android:id="@+id/Shoulder_Slider"
+            android:layout_width="151dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="211dp"
+            android:layout_marginTop="403dp"
+            android:min="100"
+            android:max="170" />
+
+        <SeekBar
+            android:id="@+id/Waist_slider"
+            android:layout_width="151dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="211dp"
+            android:layout_marginTop="463dp"
+            android:min="0"
+            android:max="180" />
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="415dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="37dp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="173dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="69dp"
+            android:layout_marginBottom="627dp"
+            android:text="@string/connected"
+            android:textAlignment="center"
+            android:textColor="#4CAF50"
+            android:textColorHighlight="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+
+        <Button
+            android:id="@+id/Disconnect_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/disconnect"
+            android:textSize="24sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="210dp"
+            />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
