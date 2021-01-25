@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.SeekBar
+import android.widget.TextView
 import java.io.IOException
 import java.util.*
 
@@ -45,6 +46,7 @@ class ArmControlActivity : AppCompatActivity() {
                 Command = "s1"+progress.toString()
                 SendCommands(Command)
                 println(Command)
+                findViewById<TextView>(R.id.Grip).text = "Grip : $progress"
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
@@ -60,7 +62,7 @@ class ArmControlActivity : AppCompatActivity() {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 Command = "s2"+progress.toString()
                 SendCommands(Command)
-                println(Command)
+                findViewById<TextView>(R.id.Wrist_Pitch).text = "Wrist Pitch : $progress"
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
@@ -76,7 +78,7 @@ class ArmControlActivity : AppCompatActivity() {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 Command = "s3"+progress.toString()
                 SendCommands(Command)
-                println(Command)
+                findViewById<TextView>(R.id.Wrist_Roll).text = "Wrist Roll : $progress"
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
@@ -91,7 +93,7 @@ class ArmControlActivity : AppCompatActivity() {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 Command = "s4"+progress.toString()
                 SendCommands(Command)
-                println(Command)
+                findViewById<TextView>(R.id.Elbow).text = "Elbow : $progress"
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
@@ -106,7 +108,7 @@ class ArmControlActivity : AppCompatActivity() {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 Command = "s5"+progress.toString()
                 SendCommands(Command)
-                println(Command)
+                findViewById<TextView>(R.id.Shoulder).text = "Shoulder : $progress"
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
@@ -121,7 +123,7 @@ class ArmControlActivity : AppCompatActivity() {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 Command = "s6"+progress.toString()
                 SendCommands(Command)
-                println(Command)
+                findViewById<TextView>(R.id.Waist).text = "Waist : $progress"
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
