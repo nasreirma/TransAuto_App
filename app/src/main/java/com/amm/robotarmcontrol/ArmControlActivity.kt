@@ -8,13 +8,15 @@ import android.content.Context
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.SeekBar
 import android.widget.TextView
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.io.IOException
 import java.util.*
+import android.content.Intent
 
+@Suppress("DEPRECATION")
 class ArmControlActivity : AppCompatActivity() {
 
     companion object {
@@ -41,11 +43,11 @@ class ArmControlActivity : AppCompatActivity() {
         var Shoulder_Move = findViewById<SeekBar>(R.id.Shoulder_Slider)
         var Waist_Move = findViewById<SeekBar>(R.id.Waist_slider)
 
+
         Grip_Move.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 Command = "s1"+progress.toString()
                 SendCommands(Command)
-                println(Command)
                 findViewById<TextView>(R.id.Grip).text = "Grip : $progress"
             }
 
@@ -89,6 +91,7 @@ class ArmControlActivity : AppCompatActivity() {
 
             }
         })
+
         Elbow_Move.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 Command = "s4"+progress.toString()
@@ -104,6 +107,7 @@ class ArmControlActivity : AppCompatActivity() {
 
             }
         })
+
         Shoulder_Move.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 Command = "s5"+progress.toString()
@@ -119,6 +123,7 @@ class ArmControlActivity : AppCompatActivity() {
 
             }
         })
+
         Waist_Move.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 Command = "s6"+progress.toString()
@@ -135,6 +140,8 @@ class ArmControlActivity : AppCompatActivity() {
             }
         })
     }
+
+
 
 
     private fun SendCommands(input : String) {
@@ -183,7 +190,7 @@ class ArmControlActivity : AppCompatActivity() {
                     RAC_bluetoothSocket!!.connect()
                 }
             } catch (e: IOException) {
-                connectSuccess = false
+                connectSuccess =  false
                 e.printStackTrace()
             }
             return null
@@ -191,12 +198,25 @@ class ArmControlActivity : AppCompatActivity() {
 
         override fun onPostExecute(result: String?) {
             super.onPostExecute(result)
+            fun showAlert() {
+                MaterialAlertDialogBuilder(context).setTitle("Error").setMessage("Error communicating with the Bluetooth device").setPositiveButton("Try again"){dialog, which ->
+                    val intent = Intent(context,BTScanActivity::class.java)
+                    context.startActivity(intent)
+                }
+                    .show()
+            }
             if (!connectSuccess) {
-                Log.i("data", "couldn't connect")
+                showAlert()
             } else {
                 RAC_isConnected = true
             }
             RAC_progress.dismiss()
         }
+
     }
+
+
 }
+
+
+
