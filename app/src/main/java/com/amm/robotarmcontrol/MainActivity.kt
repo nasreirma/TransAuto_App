@@ -14,9 +14,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Handler().postDelayed({
-            var moveToBTScan = Intent(getApplicationContext(),BTScanActivity::class.java)
+            var moveToBTScan = Intent(applicationContext,BTScanActivity::class.java)
             startActivity(moveToBTScan)
-        }, 3200)
+        }, 3000)
     }
 
 }
