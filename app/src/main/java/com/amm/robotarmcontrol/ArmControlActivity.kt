@@ -1,5 +1,8 @@
+@file:Suppress("DEPRECATION")
+
 package com.amm.robotarmcontrol
 
+import android.annotation.SuppressLint
 import android.app.ProgressDialog
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
@@ -15,6 +18,9 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.io.IOException
 import java.util.*
 import android.content.Intent
+import android.graphics.Color.GREEN
+import android.graphics.Color.parseColor
+import com.amm.robotarmcontrol.R.color.Green
 
 @Suppress("DEPRECATION")
 class ArmControlActivity : AppCompatActivity() {
@@ -28,20 +34,21 @@ class ArmControlActivity : AppCompatActivity() {
         lateinit var RAC_address: String
     }
 
+    @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_arm_control)
         RAC_address = intent.getStringExtra(BTScanActivity.EXTRA_ADDRESS).toString()
         ConnectToDevice(this).execute()
-        var RAC_BT_DISCONNECT = findViewById<Button>(R.id.Disconnect_Button)
+        val RAC_BT_DISCONNECT = findViewById<Button>(R.id.Disconnect_Button)
         RAC_BT_DISCONNECT.setOnClickListener { disconnect() }
-        var Command = ""
-        var Grip_Move = findViewById<SeekBar>(R.id.Grip_Slider)
-        var Wrist_Pitch_Move = findViewById<SeekBar>(R.id.Wrist_Pitch_Slider)
-        var Wrist_Roll_Move = findViewById<SeekBar>(R.id.Wrist_Roll_Slider)
-        var Elbow_Move = findViewById<SeekBar>(R.id.Elbow_Slider)
-        var Shoulder_Move = findViewById<SeekBar>(R.id.Shoulder_Slider)
-        var Waist_Move = findViewById<SeekBar>(R.id.Waist_slider)
+        var Command: String
+        val Grip_Move = findViewById<SeekBar>(R.id.Grip_Slider)
+        val Wrist_Pitch_Move = findViewById<SeekBar>(R.id.Wrist_Pitch_Slider)
+        val Wrist_Roll_Move = findViewById<SeekBar>(R.id.Wrist_Roll_Slider)
+        val Elbow_Move = findViewById<SeekBar>(R.id.Elbow_Slider)
+        val Shoulder_Move = findViewById<SeekBar>(R.id.Shoulder_Slider)
+        val Waist_Move = findViewById<SeekBar>(R.id.Waist_slider)
 
 
         Grip_Move.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
@@ -196,12 +203,14 @@ class ArmControlActivity : AppCompatActivity() {
             return null
         }
 
-        override fun onPostExecute(result: String?) {
+         override fun onPostExecute(result: String?) {
+             (context as ArmControlActivity)
             super.onPostExecute(result)
             fun showAlert() {
                 MaterialAlertDialogBuilder(context).setTitle("Error").setMessage("Error communicating with the Bluetooth device").setPositiveButton("Try again"){dialog, which ->
                     val intent = Intent(context,BTScanActivity::class.java)
                     context.startActivity(intent)
+                    context.finish()
                 }
                     .show()
             }
@@ -209,14 +218,14 @@ class ArmControlActivity : AppCompatActivity() {
                 showAlert()
             } else {
                 RAC_isConnected = true
+                context.findViewById<TextView>(R.id.textView2).text = "Connected"
+                context.findViewById<TextView>(R.id.textView2).setTextColor(GREEN.toInt())
             }
             RAC_progress.dismiss()
         }
-
     }
-
-
 }
+
 
 
 

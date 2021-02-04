@@ -13,6 +13,7 @@
     <string name="todo">TODO</string>
     <string name="disconnect">Disconnect</string>
     <string name="connected">Connected</string>
+    <string name="not_connected">Not conected</string>
     <string name="waist">Waist</string>
     <string name="shoulder">Shoulder</string>
     <string name="elbow">Elbow</string>
