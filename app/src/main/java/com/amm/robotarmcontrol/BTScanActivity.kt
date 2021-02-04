@@ -41,6 +41,8 @@ class BTScanActivity : AppCompatActivity() {
         var scan_button = findViewById<Button>(R.id.scan_button)
         scan_button.setOnClickListener { pairedDeviceList() }
 
+
+
     }
 
 
@@ -67,6 +69,7 @@ class BTScanActivity : AppCompatActivity() {
             val intent = Intent(this, ArmControlActivity::class.java)
             intent.putExtra(EXTRA_ADDRESS, address)
             startActivity(intent)
+            finish()
         }
     }
 
