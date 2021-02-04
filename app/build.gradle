@@ -47,4 +47,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'com.airbnb.android:lottie:3.6.0'
     implementation 'org.jetbrains.anko:anko-common:0.10.8'
+    implementation 'androidx.biometric:biometric:1.0.1'
 }
