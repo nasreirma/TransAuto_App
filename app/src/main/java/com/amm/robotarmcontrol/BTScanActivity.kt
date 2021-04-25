@@ -49,17 +49,19 @@ class BTScanActivity : AppCompatActivity() {
     private fun pairedDeviceList(){
         RAC_PairedDevices = RAC_BT_Adapter!!.bondedDevices
         val list : ArrayList<BluetoothDevice> = ArrayList()
+        val nlist : ArrayList<String> = ArrayList()
 
         if (!RAC_PairedDevices.isEmpty()) {
             for (device: BluetoothDevice in RAC_PairedDevices) {
+                nlist.add(device.name)
                 list.add(device)
-                Log.i("device", ""+device)
+                Log.i("device", ""+device.name)
             }
         } else {
             toast("no paired bluetooth devices found")
         }
 
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, list)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, nlist)
         var bt_list = findViewById<ListView>(R.id.bt_list)
         bt_list.adapter = adapter
         bt_list.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
