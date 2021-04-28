@@ -14,17 +14,19 @@
     <string name="disconnect">Disconnect</string>
     <string name="connected">Connected</string>
     <string name="not_connected">Not conected</string>
+    <string name="Speed">Speed</string>
     <string name="waist">Waist</string>
     <string name="shoulder">Shoulder</string>
     <string name="elbow">Elbow</string>
     <string name="wrist_roll">Wrist Roll</string>
     <string name="wrist_pitch">Wrist Pitch</string>
     <string name="grip">Grip</string>
-    <string name="_45">45</string>
+    <string name="_80">80</string>
     <string name="_20">20</string>
     <string name="_100">100</string>
     <string name="_0">0</string>
     <string name="_180">180</string>
     <string name="_125">125</string>
     <string name="_170">170</string>
+    <string name="arm_pic">Arm pic</string>
 </resources>

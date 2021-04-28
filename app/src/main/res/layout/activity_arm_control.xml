@@ -36,7 +36,18 @@
             android:id="@+id/imageView4"
             android:layout_width="163dp"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/arm_pic"
             app:srcCompat="@drawable/robot_arm_v2" />
+
+        <TextView
+            android:id="@+id/Speed"
+            android:layout_width="245dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="500dp"
+            android:text="@string/Speed"
+            android:textAlignment="center"
+            android:textColor="#000000"/>
 
         <TextView
             android:id="@+id/Waist"
@@ -105,10 +116,10 @@
             android:layout_marginStart="165dp"
             android:layout_marginTop="83dp"
             android:layout_marginEnd="0dp"
-            android:text="@string/_45"
-            android:textSize="20sp"
+            android:text="@string/_0"
             android:textAlignment="center"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView10"
@@ -141,10 +152,10 @@
             android:layout_marginStart="165dp"
             android:layout_marginTop="250dp"
             android:layout_marginEnd="0dp"
-            android:text="@string/_20"
-            android:textSize="20sp"
+            android:text="@string/_0"
             android:textAlignment="center"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView13"
@@ -153,10 +164,10 @@
             android:layout_marginStart="165dp"
             android:layout_marginTop="403dp"
             android:layout_marginEnd="0dp"
-            android:text="@string/_100"
-            android:textSize="20sp"
+            android:text="@string/_0"
             android:textAlignment="center"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView14"
@@ -171,16 +182,28 @@
             android:textColor="#000000" />
 
         <TextView
+            android:id="@+id/textView21"
+            android:layout_width="37dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="523dp"
+            android:layout_marginEnd="0dp"
+            android:text="@string/_0"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+
+        <TextView
             android:id="@+id/textView15"
             android:layout_width="35dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="370dp"
             android:layout_marginTop="83dp"
             android:layout_marginEnd="0dp"
-            android:text="@string/_125"
-            android:textSize="20sp"
+            android:text="@string/_80"
             android:textAlignment="center"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView16"
@@ -196,15 +219,15 @@
 
         <TextView
             android:id="@+id/textView17"
-            android:layout_width="34dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="370dp"
             android:layout_marginTop="193dp"
             android:layout_marginEnd="0dp"
             android:text="@string/_180"
-            android:textSize="20sp"
             android:textAlignment="center"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView18"
@@ -225,10 +248,10 @@
             android:layout_marginStart="370dp"
             android:layout_marginTop="403dp"
             android:layout_marginEnd="0dp"
-            android:text="@string/_170"
-            android:textSize="20sp"
+            android:text="@string/_180"
             android:textAlignment="center"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView20"
@@ -242,14 +265,27 @@
             android:textAlignment="center"
             android:textColor="#000000" />
 
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="37dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="370dp"
+            android:layout_marginTop="523dp"
+            android:layout_marginEnd="0dp"
+            android:text="@string/_100"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+
         <SeekBar
             android:id="@+id/Grip_Slider"
             android:layout_width="151dp"
             android:layout_height="28dp"
             android:layout_marginStart="211dp"
             android:layout_marginTop="83dp"
-            android:min="45"
-            android:max="125" />
+            android:max="80"
+            android:min="0"
+            android:progress="40" />
 
         <SeekBar
             android:id="@+id/Wrist_Pitch_Slider"
@@ -257,8 +293,9 @@
             android:layout_height="28dp"
             android:layout_marginStart="211dp"
             android:layout_marginTop="138dp"
+            android:max="180"
             android:min="0"
-            android:max="180" />
+            android:progress="90" />
 
         <SeekBar
             android:id="@+id/Wrist_Roll_Slider"
@@ -266,8 +303,9 @@
             android:layout_height="28dp"
             android:layout_marginStart="211dp"
             android:layout_marginTop="193dp"
+            android:max="180"
             android:min="0"
-            android:max="180" />
+            android:progress="90" />
 
         <SeekBar
             android:id="@+id/Elbow_Slider"
@@ -275,8 +313,9 @@
             android:layout_height="28dp"
             android:layout_marginStart="211dp"
             android:layout_marginTop="250dp"
-            android:min="20"
-            android:max="180" />
+            android:max="180"
+            android:min="0"
+            android:progress="90" />
 
         <SeekBar
             android:id="@+id/Shoulder_Slider"
@@ -284,8 +323,9 @@
             android:layout_height="28dp"
             android:layout_marginStart="211dp"
             android:layout_marginTop="403dp"
-            android:min="100"
-            android:max="170" />
+            android:max="180"
+            android:min="0"
+            android:progress="90" />
 
         <SeekBar
             android:id="@+id/Waist_slider"
@@ -293,8 +333,44 @@
             android:layout_height="28dp"
             android:layout_marginStart="211dp"
             android:layout_marginTop="463dp"
+            android:max="180"
             android:min="0"
-            android:max="180" />
+            android:progress="90" />
+
+        <SeekBar
+            android:id="@+id/Speed_slider"
+            android:layout_width="151dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="211dp"
+            android:layout_marginTop="523dp"
+            android:max="100"
+            android:min="0"
+            android:progress="20" />
+
+        <Button
+            android:id="@+id/RUN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RUN"
+            android:layout_marginStart="245dp"
+            android:layout_marginTop="280dp"
+            android:backgroundTint="@color/Green"/>
+
+        <Button
+            android:id="@+id/RESET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RESET"
+            android:layout_marginStart="325dp"
+            android:layout_marginTop="330dp" />
+
+        <Button
+            android:id="@+id/SAVE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SAVE"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="330dp" />
 
 
     </FrameLayout>

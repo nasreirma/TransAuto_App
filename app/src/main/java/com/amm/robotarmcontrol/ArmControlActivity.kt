@@ -18,8 +18,8 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.io.IOException
 import java.util.*
 import android.content.Intent
-import android.graphics.Color.GREEN
-import android.graphics.Color.parseColor
+import android.graphics.Color
+import android.graphics.Color.*
 import com.amm.robotarmcontrol.R.color.Green
 
 @Suppress("DEPRECATION")
@@ -49,6 +49,11 @@ class ArmControlActivity : AppCompatActivity() {
         val Elbow_Move = findViewById<SeekBar>(R.id.Elbow_Slider)
         val Shoulder_Move = findViewById<SeekBar>(R.id.Shoulder_Slider)
         val Waist_Move = findViewById<SeekBar>(R.id.Waist_slider)
+        val Speed_Move = findViewById<SeekBar>(R.id.Speed_slider)
+        val RUN = findViewById<Button>(R.id.RUN)
+        val RESET = findViewById<Button>(R.id.RESET)
+        val SAVE = findViewById<Button>(R.id.SAVE)
+        var RUN_STAT : Boolean = false
 
 
         Grip_Move.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
@@ -146,6 +151,44 @@ class ArmControlActivity : AppCompatActivity() {
 
             }
         })
+
+        Speed_Move.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                Command = "ss"+progress.toString()
+                SendCommands(Command)
+                findViewById<TextView>(R.id.Speed).text = "Speed : $progress"
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+
+            }
+        })
+
+        SAVE.setOnClickListener {
+            SendCommands("SAVE")
+        }
+
+        RESET.setOnClickListener {
+            SendCommands("RESET")
+        }
+
+        RUN.setOnClickListener {
+            if (RUN_STAT == false){
+                SendCommands("RUN")
+                RUN.setText("PAUSE")
+                RUN.setBackgroundColor(RED)
+            }
+            else if (RUN_STAT == true){
+                SendCommands("PAUSE")
+                RUN.setText("RUN")
+                RUN.setBackgroundColor(Green)
+            }
+            RUN_STAT = !RUN_STAT
+        }
     }
 
 
@@ -207,7 +250,7 @@ class ArmControlActivity : AppCompatActivity() {
              (context as ArmControlActivity)
             super.onPostExecute(result)
             fun showAlert() {
-                MaterialAlertDialogBuilder(context).setTitle("Error").setMessage("Error communicating with the Bluetooth device").setPositiveButton("Try again"){dialog, which ->
+                MaterialAlertDialogBuilder(context).setTitle("Error").setMessage("Error communicating with the Bluetooth device").setPositiveButton("Try again"){_, _ ->
                     val intent = Intent(context,BTScanActivity::class.java)
                     context.startActivity(intent)
                     context.finish()
