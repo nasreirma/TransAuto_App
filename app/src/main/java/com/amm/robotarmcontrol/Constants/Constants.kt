@@ -11,4 +11,9 @@ object Constants {
 
     const val CANCEL="Cancel"
 
+
+    const val PASSWORD_PIN_AUTHENTICATION = "Password/PIN Authentication"
+    const val PASSWORD_PIN_AUTHENTICATION_SUBTITLE = "Authenticate using Device Password/PIN"
+    const val PASSWORD_PIN_AUTHENTICATION_DESCRIPTION = "This app uses your makes use of device password/pin to authenticate the dialog."
+
 }
