@@ -1,7 +1,9 @@
 package com.amm.robotarmcontrol
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.hardware.biometrics.BiometricManager.Authenticators.DEVICE_CREDENTIAL
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -25,13 +27,24 @@ class BiometricAuthentication : AppCompatActivity() {
         activityContext = this
         executor = ContextCompat.getMainExecutor(activityContext)
         setPrompt()
-        if (Utilities.isBiometricHardWareAvailable(activityContext)) {
+        findViewById<ImageButton>(R.id.fpAuthButton).setOnClickListener {
             initBiometricPrompt(
                     Constants.BIOMETRIC_AUTHENTICATION,
                     Constants.BIOMETRIC_AUTHENTICATION_SUBTITLE,
                     Constants.BIOMETRIC_AUTHENTICATION_DESCRIPTION,
                     false
             )
+            biometricPrompt.authenticate(promptInfo)
+        }
+
+        findViewById<ImageButton>(R.id.pinButton).setOnClickListener {
+            initBiometricPrompt(
+                    Constants.PASSWORD_PIN_AUTHENTICATION,
+                    Constants.PASSWORD_PIN_AUTHENTICATION_SUBTITLE,
+                    Constants.PASSWORD_PIN_AUTHENTICATION_DESCRIPTION,
+                    true
+            )
+            biometricPrompt.authenticate(promptInfo)
         }
 
     }
@@ -39,7 +52,7 @@ class BiometricAuthentication : AppCompatActivity() {
     private fun setPrompt() {
         biometricPrompt = BiometricPrompt(this, executor,
                 object : BiometricPrompt.AuthenticationCallback() {
-                     override fun onAuthenticationError(
+                    override fun onAuthenticationError(
                             errorCode: Int,
                             errString: CharSequence
                     ) {
@@ -58,7 +71,7 @@ class BiometricAuthentication : AppCompatActivity() {
                                 Constants.AUTHENTICATION_SUCCEEDED,
                                 activityContext as BiometricAuthentication
                         )
-                        var moveToBTScan = Intent(applicationContext,BTScanActivity::class.java)
+                        var moveToBTScan = Intent(applicationContext, BTScanActivity::class.java)
                         startActivity(moveToBTScan)
                     }
 
@@ -72,6 +85,7 @@ class BiometricAuthentication : AppCompatActivity() {
                 })
     }
 
+    @SuppressLint("WrongConstant")
     private fun initBiometricPrompt(
             title: String,
             subtitle: String,
@@ -84,6 +98,7 @@ class BiometricAuthentication : AppCompatActivity() {
                     .setSubtitle(subtitle)
                     .setDescription(description)
                     .setDeviceCredentialAllowed(true)
+                    .setAllowedAuthenticators(DEVICE_CREDENTIAL)
                     .build()
         } else {
             promptInfo = BiometricPrompt.PromptInfo.Builder()
@@ -92,10 +107,6 @@ class BiometricAuthentication : AppCompatActivity() {
                     .setDescription(description)
                     .setNegativeButtonText(Constants.CANCEL)
                     .build()
-        }
-
-        findViewById<ImageButton>(R.id.fpAuthButton).setOnClickListener {
-            biometricPrompt.authenticate(promptInfo)
         }
     }
 }
