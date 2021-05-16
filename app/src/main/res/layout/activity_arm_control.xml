@@ -295,7 +295,7 @@
             android:layout_marginTop="138dp"
             android:max="180"
             android:min="0"
-            android:progress="90" />
+            android:progress="20" />
 
         <SeekBar
             android:id="@+id/Wrist_Roll_Slider"
@@ -315,7 +315,7 @@
             android:layout_marginTop="250dp"
             android:max="180"
             android:min="0"
-            android:progress="90" />
+            android:progress="140" />
 
         <SeekBar
             android:id="@+id/Shoulder_Slider"
