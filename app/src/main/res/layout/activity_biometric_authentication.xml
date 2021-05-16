@@ -27,4 +27,17 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
         app:srcCompat="@drawable/ic_baseline_fingerprint_24" />
 
+    <ImageButton
+        android:id="@+id/pinButton"
+        android:layout_width="102dp"
+        android:layout_height="109dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="83dp"
+        app:layout_constraintBottom_toTopOf="@+id/fpAuthButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:srcCompat="@drawable/ic_baseline_fiber_pin_24" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
